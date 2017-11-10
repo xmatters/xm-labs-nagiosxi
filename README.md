@@ -1,5 +1,7 @@
 # Nagios XI
+Nagios is a long favored monitoring solution for companies across the spectrum. XI adds much functionality and commercial support. 
 
+This integration is targeted for Nagios XI, if you are looking for Nagios Core, check [here](https://github.com/xmatters/xm-labs-nagios)
 
 <kbd>
   <img src="https://github.com/xmatters/xMatters-Labs/raw/master/media/disclaimer.png">

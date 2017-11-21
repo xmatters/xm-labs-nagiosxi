@@ -60,8 +60,8 @@ Replacing `MYCOMPLEXPASSWORD` with the password for the xMatters user.
 
 | Command Name | Command |
 | ------------ | ------- |
-| xM-Agent-host | `IAHOME/bin/APClient.bin --map-data "applications|nagios-host" "host" "$HOSTNAME$" "$HOSTGROUPNAME$" "$HOSTADDRESS$" "$HOSTSTATE$" "$HOSTSTATEID$" "$LASTHOSTSTATE$" "$LASTHOSTSTATEID$" "$HOSTSTATETYPE$" "" "" "$HOSTEVENTID$" "$HOSTPROBLEMID$" "$HOSTOUTPUT$" "$LONGHOSTOUTPUT$" "$HOSTDOWNTIME$"` |
-| xM-Agent-service | `IAHOME/bin/APClient.bin --map-data "applications|nagios-service" "service" "$HOSTNAME$" "$SERVICEDESC$" "$HOSTGROUPNAME$" "$HOSTADDRESS$" "$HOSTSTATE$" "$HOSTSTATEID$" "$HOSTEVENTID$" "$HOSTPROBLEMID$" "$SERVICESTATE$" "$SERVICESTATEID$" "$LASTSERVICESTATE$" "$LASTSERVICESTATEID$" "$SERVICESTATETYPE$" "" "" "$SERVICEEVENTID$" "$SERVICEPROBLEMID$" "$SERVICEOUTPUT$" "$LONGSERVICEOUTPUT$" "$SERVICEDOWNTIME$"` |
+| xM-Agent-host | `IAHOME/bin/APClient.bin --map-data "applications\|nagios-host" "host" "$HOSTNAME$" "$HOSTGROUPNAME$" "$HOSTADDRESS$" "$HOSTSTATE$" "$HOSTSTATEID$" "$LASTHOSTSTATE$" "$LASTHOSTSTATEID$" "$HOSTSTATETYPE$" "" "" "$HOSTEVENTID$" "$HOSTPROBLEMID$" "$HOSTOUTPUT$" "$LONGHOSTOUTPUT$" "$HOSTDOWNTIME$"` |
+| xM-Agent-service | `IAHOME/bin/APClient.bin --map-data "applications\|nagios-service" "service" "$HOSTNAME$" "$SERVICEDESC$" "$HOSTGROUPNAME$" "$HOSTADDRESS$" "$HOSTSTATE$" "$HOSTSTATEID$" "$HOSTEVENTID$" "$HOSTPROBLEMID$" "$SERVICESTATE$" "$SERVICESTATEID$" "$LASTSERVICESTATE$" "$LASTSERVICESTATEID$" "$SERVICESTATETYPE$" "" "" "$SERVICEEVENTID$" "$SERVICEPROBLEMID$" "$SERVICEOUTPUT$" "$LONGSERVICEOUTPUT$" "$SERVICEDOWNTIME$"` |
 
 Make sure to replace `IAHOME` with the full path to the Integration Agent home directory. 
 

@@ -27,7 +27,7 @@ A contact with a notification command is notified when a host or service goes cr
 **Pre-steps**: Install and configure the Integration Agent on the same box as Nagios XI. See details [here](https://support.xmatters.com/hc/en-us/articles/201463419-Integration-Agent-for-xMatters-5-x-xMatters-On-Demand).
 
 ### xMatters on Demand
-1. Login to xMatters as a Developer and create a new usernavigate to the Developer tab. 
+1. Login to xMatters as a Developer and create a new user. 
 2. Create a new REST user. See details [here](https://help.xmatters.com/integrations/xmatters/configuringxmatters.htm#Create)
 2. Import the [NagiosXICommPlan.zip](NagiosXICommPlan.zip) communications plan. 
 3. Next to the NagiosXI comm plan, click Edit > Access Permissions and give access to the user created in step 2. 
@@ -42,7 +42,7 @@ A contact with a notification command is notified when a host or service goes cr
     <path>applications/nagios/nagios_service.xml</path>
 ```
 2. Unzip the [NagiosXI-IAFiles.zip](NagiosXI-IAFiles.zip) to `IAHOME/integrationservices/applications/`. 
-3. Open the `IAHOME/integrationservices/applications/configuration_host.js` file in a text editor. 
+3. Open the `IAHOME/integrationservices/applications/nagios/configuration_host.js` file in a text editor. 
 4. Update the `WEB_SERVICE_URL` value with the URL for the `Inbound Host Events` inbound integration copied from above. 
 5. Update the `INITATOR` value to match the user created in xMatters above. 
 6. Verify the `NAGIOS_COMMAND_FILE` path variable is correct. 

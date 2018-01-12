@@ -58,10 +58,10 @@ Replacing `MYCOMPLEXPASSWORD` with the password for the xMatters user.
 1. Login to Nagios XI and into the Core Config Manager. 
 2. Click Commands and create two new commands with the following info:
 
-| Command Name | Command |
-| ------------ | ------- |
-| xM-Agent-host | `IAHOME/bin/APClient.bin --map-data "applications\|nagios-host" "host" "$HOSTNAME$" "$HOSTGROUPNAME$" "$HOSTADDRESS$" "$HOSTSTATE$" "$HOSTSTATEID$" "$LASTHOSTSTATE$" "$LASTHOSTSTATEID$" "$HOSTSTATETYPE$" "" "" "$HOSTEVENTID$" "$HOSTPROBLEMID$" "$HOSTOUTPUT$" "$LONGHOSTOUTPUT$" "$HOSTDOWNTIME$"` |
-| xM-Agent-service | `IAHOME/bin/APClient.bin --map-data "applications\|nagios-service" "service" "$HOSTNAME$" "$SERVICEDESC$" "$HOSTGROUPNAME$" "$HOSTADDRESS$" "$HOSTSTATE$" "$HOSTSTATEID$" "$HOSTEVENTID$" "$HOSTPROBLEMID$" "$SERVICESTATE$" "$SERVICESTATEID$" "$LASTSERVICESTATE$" "$LASTSERVICESTATEID$" "$SERVICESTATETYPE$" "" "" "$SERVICEEVENTID$" "$SERVICEPROBLEMID$" "$SERVICEOUTPUT$" "$LONGSERVICEOUTPUT$" "$SERVICEDOWNTIME$"` |
+| Command Name | Command | Command Type |
+| ------------ | ------- | ------------ |
+| xM-Agent-host | `IAHOME/bin/APClient.bin --map-data "applications\|nagios-host" "host" "$HOSTNAME$" "$HOSTGROUPNAME$" "$HOSTADDRESS$" "$HOSTSTATE$" "$HOSTSTATEID$" "$LASTHOSTSTATE$" "$LASTHOSTSTATEID$" "$HOSTSTATETYPE$" "" "" "$HOSTEVENTID$" "$HOSTPROBLEMID$" "$HOSTOUTPUT$" "$LONGHOSTOUTPUT$" "$HOSTDOWNTIME$"` | misc command |
+| xM-Agent-service | `IAHOME/bin/APClient.bin --map-data "applications\|nagios-service" "service" "$HOSTNAME$" "$SERVICEDESC$" "$HOSTGROUPNAME$" "$HOSTADDRESS$" "$HOSTSTATE$" "$HOSTSTATEID$" "$HOSTEVENTID$" "$HOSTPROBLEMID$" "$SERVICESTATE$" "$SERVICESTATEID$" "$LASTSERVICESTATE$" "$LASTSERVICESTATEID$" "$SERVICESTATETYPE$" "" "" "$SERVICEEVENTID$" "$SERVICEPROBLEMID$" "$SERVICEOUTPUT$" "$LONGSERVICEOUTPUT$" "$SERVICEDOWNTIME$"` | misc command |
 
 Make sure to replace `IAHOME` with the full path to the Integration Agent home directory. 
 

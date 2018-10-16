@@ -37,22 +37,28 @@ A contact with a notification command is notified when a host or service goes cr
 
 ### Integration Agent
 1. Open the `IAHOME/conf/IAConfig.xml` file and navigate to the `<service-configs>` element near the bottom. Add the following two lines inside that tag:
-```
+    ```
     <path>applications/nagios/nagios_host.xml</path>
     <path>applications/nagios/nagios_service.xml</path>
-```
+    ```
 2. Unzip the [NagiosXI-IAFiles.zip](NagiosXI-IAFiles.zip) to `IAHOME/integrationservices/applications/`. 
 3. Open the `IAHOME/integrationservices/applications/nagios/configuration_host.js` file in a text editor. 
 4. Update the `WEB_SERVICE_URL` value with the URL for the `Inbound Host Events` inbound integration copied from above. 
 5. Update the `INITATOR` value to match the user created in xMatters above. 
-6. Verify the `NAGIOS_COMMAND_FILE` path variable is correct. 
-7. Repeat for the `configuration_service.js` file.
-8. To encrypt the password, navigate to the `IAHOME/bin` directory and run the following command:
-```bash
-./iadmin.sh --new MYCOMPLEXPASSWORD --file integrationservices/applications/nagios/.initiatorpasswd
-```
-Replacing `MYCOMPLEXPASSWORD` with the password for the xMatters user. 
-9. Open the `nagios_host.js` file and scroll down to the `execute` function. Update the path to the `printf_redirect.sh` script. Repeat for `nagios_service.js`.  
+6. Verify the `NAGIOS_COMMAND_FILE` path variable is correct and save the file.
+7. Repeat steps 4 through 6 for the `IAHOME/integrationservices/applications/nagios/configuration_service.js` file.
+8. Open the `IAHOME/integrationservices/applications/nagios/nagios_host.js` file in a text editor.
+
+9. Scroll down to the `execute` function. Update the path to the `printf_redirect.sh` script so it points to `IAHOME/integrationservices/applications/nagios/printf_redirect.sh`
+
+10. Repeat step 9 for the `IAHOME/integrationservices/applications/nagios/nagios_service.js` file.
+
+11. To encrypt the password for the xMatters REST user, navigate to the `IAHOME/bin` directory and run the following command:
+    ```bash
+     ./iapassword.bat --new "MYCOMPLEXPASSWORD" --old "xmatters" --file integrationservices/applications/nagios/.initiatorpasswd
+    ```
+    Replacing `MYCOMPLEXPASSWORD` with the password for the xMatters REST user. 
+
 
 ## Nagios XI set up
 1. Login to Nagios XI and into the Core Config Manager. 

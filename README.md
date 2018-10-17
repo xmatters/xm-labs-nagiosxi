@@ -41,7 +41,9 @@ A contact with a notification command is notified when a host or service goes cr
     <path>applications/nagios/nagios_host.xml</path>
     <path>applications/nagios/nagios_service.xml</path>
     ```
-2. Unzip the [NagiosXI-IAFiles.zip](NagiosXI-IAFiles.zip) to `IAHOME/integrationservices/applications/`. 
+2. Unzip the [NagiosXI-IAFiles.zip](NagiosXI-IAFiles.zip) to `IAHOME/`. This will create the following new files
+   * `IAHOME/conf/deduplication-filter-nagios.xml`
+   * `IAHOME/integrationservices/applications/nagios/*`
 3. Open the `IAHOME/integrationservices/applications/nagios/configuration_host.js` file in a text editor. 
 4. Update the `WEB_SERVICE_URL` value with the URL for the `Inbound Host Events` inbound integration copied from above. 
 5. Update the `INITATOR` value to match the user created in xMatters above. 
@@ -58,7 +60,15 @@ A contact with a notification command is notified when a host or service goes cr
      ./iapassword.bat --new "MYCOMPLEXPASSWORD" --old "xmatters" --file integrationservices/applications/nagios/.initiatorpasswd
     ```
     Replacing `MYCOMPLEXPASSWORD` with the password for the xMatters REST user. 
+12. If nagiosxi is the only integration this integration agent is serving, then run the following commands:
 
+    ```bash
+    cd $IAHOME
+    cp ./conf/deduplication-filter.xml ./conf/deduplication-filter-original.xml
+    cp ./conf/deduplication-filter-nagios.xml ./conf/deduplication-filter.xml
+    ```
+    Then update the `./conf/deduplication-filter.xml` to match your expected dedpulication needs. 
+13. If there are other integrations on this agent, then copy the contents of the `deduplicator` tag in the `./conf/deduplication-filter-nagios.xml` file into the existing `./conf/deduplication-filter.xml`
 
 ## Nagios XI set up
 1. Login to Nagios XI and into the Core Config Manager. 

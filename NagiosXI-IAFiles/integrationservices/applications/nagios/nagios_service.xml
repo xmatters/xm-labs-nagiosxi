@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ | Service configuration file for the applications domain.
+ |
+ | attribute: version
+ | values   : 1.0
+ | comments : identifies the format version of this file
+ |
+ | attribute: xmlns
+ | values   : http://www.alarmpoint.com/schema
+ | comments : the default namespace in which all elements and attributes are
+ |            defined
+ +-->
+<integration-service version="1.0" xmlns="http://www.alarmpoint.com/schema">
+   <domain>applications</domain>
+   <name>nagios-service</name>
+   <initial-state>active</initial-state>
+   <script lang="js">
+     <file>nagios_service.js</file>
+   </script>
+   <classpath/>
+   <mapped-input method="add">
+     <parameter>handler-type</parameter>
+     <parameter>host</parameter>
+     <parameter>service</parameter>
+     <parameter>hostgroupname</parameter>
+     <parameter>hostaddress</parameter>
+     <parameter>hoststate</parameter>
+     <parameter>hoststateid</parameter>
+     <parameter>hosteventid</parameter>
+     <parameter>hostproblemid</parameter>
+     <parameter>servicestate</parameter>
+     <parameter>servicestateid</parameter>
+     <parameter>lastservicestate</parameter>
+     <parameter>lastservicestateid</parameter>
+     <parameter>servicestatetype</parameter>
+     <parameter>currentattempt</parameter>
+     <parameter>maxattempts</parameter>
+     <parameter>serviceeventid</parameter>
+     <parameter>serviceproblemid</parameter>
+     <parameter>serviceoutput</parameter>
+     <parameter>longserviceoutput</parameter>
+     <parameter>servicedowntime</parameter>
+<!--
+    <parameter>recipients</parameter>
+    <parameter>priority</parameter>
+    <parameter>building</parameter>
+    <parameter>city</parameter>
+ +-->
+   </mapped-input>
+<!--
+   <constants>
+   	<encrypted-constant name="xmpassword" type="string" overwrite="true">
+   	 <file>integrationservices/applications/nagios/.initiatorpasswd</file>
+   	</encrypted-constant>
+   </constants>
++-->
+</integration-service>

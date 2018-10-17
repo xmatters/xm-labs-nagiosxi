@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+ | EventDeduplicator Configuration file.
+ | 
+ | Filter attributes
+ |   attribute: predicates
+ |   comments : This is the list of predicates that are considered in event correlation. An event request will
+ |              be considered for deduplication only if all of these predicates are present in the request, AND
+ |              if all of the predicates' values match those of a previous request.
+ |
+ |   attribute: suppression_period
+ |   comments : An event request will be deduplicated only if a matching request was processed less than this
+ |              number of seconds ago.
+ |
+ |   attribute: window_size
+ |   comments : This is the number of non-matching events before the suppression period timer is reset.
+ |              An event request will not be deduplicated if this many non-matching requests have been received
+ |              within the suppression period.
+ +-->
+ <deduplicator xmlns="http://www.alarmpoint.com/schema">
+  <!-- sample filter to prevent pinging more often than once every 5 minutes to any device -->
+  <filter name="nagiosxi-host">
+    <predicates>
+      <predicate>host</predicate>
+    </predicates>
+    <suppression_period>120</suppression_period>
+    <window_size>25</window_size>
+  </filter>
+
+  <filter name="nagiosxi-service">
+    <predicates>
+      <predicate>service</predicate>
+    </predicates>
+    <suppression_period>120</suppression_period>
+    <window_size>25</window_size>
+  </filter>  
+</deduplicator>

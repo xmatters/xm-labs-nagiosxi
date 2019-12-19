@@ -26,14 +26,14 @@ A contact with a notification command is notified when a host or service goes cr
 
 **Pre-steps**: Install and configure the Integration Agent on the same box as Nagios XI. See details [here](https://support.xmatters.com/hc/en-us/articles/201463419-Integration-Agent-for-xMatters-5-x-xMatters-On-Demand).
 
-### xMatters on Demand
+### xMatters
 1. Login to xMatters as a Developer and create a new user. 
 2. Create a new REST user. See details [here](https://help.xmatters.com/integrations/xmatters/configuringxmatters.htm#Create)
 2. Import the [NagiosXICommPlan.zip](NagiosXICommPlan.zip) communications plan. 
 3. Next to the NagiosXI comm plan, click Edit > Access Permissions and give access to the user created in step 2. 
 4. Click Edit > Forms and next to the Host Notification form, click Edit > Sender Permissions and give access to the user created in step 2. Repeat for the Service Notification form.
 5. Navigate to the Integration Builder tab and expand the Inbound Integrations section. Click on `Inbound Host Events` and copy the URL at the bottom. Repeat for `Inbound Service Events`. 
-
+6. On the Workflow tab, on the left menu if there is an entry for "Event Domains", then click that then select `applications` and in the Integration Services section, click the Add New link. Populate the Name field with `nagios-host`. Repeat to add a new one for `nagios-service`. If Event Domains is not present, contact our helpful [support people](https://support.xmatters.com/hc/en-us/requests/new) and they'll hook you up. 
 
 ### Integration Agent
 1. Open the `IAHOME/conf/IAConfig.xml` file and navigate to the `<service-configs>` element near the bottom. Add the following two lines inside that tag:

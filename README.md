@@ -16,7 +16,7 @@ This integration is targeted for Nagios XI, if you are looking for Nagios Core, 
 
 # Files
 * [NagiosXI-IAFiles.zip](NagiosXI-IAFiles.zip) - Integration Agent integration service files. 
-* [NagiosXICommPlan.zip](NagiosXICommPlan.zip) - The workflow for uploading to xMatters On Demand.
+* [NagiosXIWorkflow.zip](NagiosXIWorkflow.zip) - The workflow for uploading to xMatters On Demand.
 
 
 # How it works

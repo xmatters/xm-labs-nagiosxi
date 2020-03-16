@@ -4,7 +4,9 @@ Nagios is a long favored monitoring solution for companies across the spectrum. 
 This integration is targeted for Nagios XI, if you are looking for Nagios Core, check [here](https://github.com/xmatters/xm-labs-nagios)
 
 <kbd>
-  <img src="https://github.com/xmatters/xMatters-Labs/raw/master/media/disclaimer.png">
+<a href="https://support.xmatters.com/hc/en-us/community/topics">
+   <img src="https://github.com/xmatters/xMatters-Labs/raw/master/media/disclaimer.png">
+</a>
 </kbd>
 
 # Pre-Requisites
@@ -14,7 +16,7 @@ This integration is targeted for Nagios XI, if you are looking for Nagios Core, 
 
 # Files
 * [NagiosXI-IAFiles.zip](NagiosXI-IAFiles.zip) - Integration Agent integration service files. 
-* [NagiosXICommPlan.zip](NagiosXICommPlan.zip) - The Comm Plan for uploading to xMatters On Demand.
+* [NagiosXICommPlan.zip](NagiosXICommPlan.zip) - The workflow for uploading to xMatters On Demand.
 
 
 # How it works
@@ -29,8 +31,8 @@ A contact with a notification command is notified when a host or service goes cr
 ### xMatters
 1. Login to xMatters as a Developer and create a new user. 
 2. Create a new REST user. See details [here](https://help.xmatters.com/integrations/xmatters/configuringxmatters.htm#Create)
-2. Import the [NagiosXICommPlan.zip](NagiosXICommPlan.zip) communications plan. 
-3. Next to the NagiosXI comm plan, click Edit > Access Permissions and give access to the user created in step 2. 
+2. Import the [NagiosXICommPlan.zip](NagiosXICommPlan.zip) workflow. 
+3. Next to the NagiosXI workflow, click Edit > Access Permissions and give access to the user created in step 2. 
 4. Click Edit > Forms and next to the Host Notification form, click Edit > Sender Permissions and give access to the user created in step 2. Repeat for the Service Notification form.
 5. Navigate to the Integration Builder tab and expand the Inbound Integrations section. Click on `Inbound Host Events` and copy the URL at the bottom. Repeat for `Inbound Service Events`. 
 6. On the Workflow tab, on the left menu if there is an entry for "Event Domains", then click that then select `applications` and in the Integration Services section, click the Add New link. Populate the Name field with `nagios-host`. Repeat to add a new one for `nagios-service`. If Event Domains is not present, contact our helpful [support people](https://support.xmatters.com/hc/en-us/requests/new) and they'll hook you up. 

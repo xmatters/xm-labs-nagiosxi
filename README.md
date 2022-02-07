@@ -9,6 +9,12 @@ This integration is targeted for Nagios XI, if you are looking for Nagios Core, 
 </a>
 </kbd>
 
+--------
+
+An updated version of this integration is available, supporting the latest version of Nagios XI and based on xMatters Flow Designer so you can easily connect other tools to your toolchain. Install it right from the Workflow Template directory within your xMatters instance. [Learn more](http://help.xmatters.com/integrations/#cshid=Nagios).
+
+--------
+
 # Pre-Requisites
 * Nagios XI
 * xMatters integration agent 5.1.8 - Download and documentation [here](https://support.xmatters.com/hc/en-us/articles/201463419-Integration-Agent-for-xMatters-5-x-xMatters-On-Demand)
